@@ -1,0 +1,18 @@
+menu "hal_nordic (/home/steve/programming/zephyr/zephyrproject/modules/hal/nordic)"
+osource "$(ZEPHYR_HAL_NORDIC_KCONFIG)"
+config ZEPHYR_HAL_NORDIC_MODULE
+	bool
+	default y
+endmenu
+menu "sof (/home/steve/programming/zephyr/zephyrproject/modules/audio/sof)"
+osource "/home/steve/programming/zephyr/zephyrproject/modules/audio/sof/zephyr/Kconfig"
+config ZEPHYR_SOF_MODULE
+	bool
+	default y
+endmenu
+menu "trusted-firmware-m (/home/steve/programming/zephyr/zephyrproject/modules/tee/tfm)"
+osource "$(ZEPHYR_TRUSTED_FIRMWARE_M_KCONFIG)"
+config ZEPHYR_TRUSTED_FIRMWARE_M_MODULE
+	bool
+	default y
+endmenu
