@@ -9591,9 +9591,9 @@ void z_data_copy(void)
     39bc:	f000 bb57 	b.w	406e <memcpy>
     39c0:	20000000 	.word	0x20000000
     39c4:	2000010c 	.word	0x2000010c
-    39c8:	00004ab0 	.word	0x00004ab0
+    39c8:	00004aa0 	.word	0x00004aa0
     39cc:	00000000 	.word	0x00000000
-    39d0:	00004ab0 	.word	0x00004ab0
+    39d0:	00004aa0 	.word	0x00004aa0
     39d4:	20000000 	.word	0x20000000
 
 000039d8 <elapsed>:
@@ -10022,9 +10022,9 @@ int64_t sys_clock_tick_get(void)
     3c50:	4803      	ldr	r0, [pc, #12]	; (3c60 <boot_banner+0x14>)
     3c52:	f000 b827 	b.w	3ca4 <printk>
     3c56:	bf00      	nop
-    3c58:	00004aad 	.word	0x00004aad
+    3c58:	00004a9f 	.word	0x00004a9f
     3c5c:	00004a6b 	.word	0x00004a6b
-    3c60:	00004a87 	.word	0x00004a87
+    3c60:	00004a79 	.word	0x00004a79
 
 00003c64 <sys_notify_validate>:
 

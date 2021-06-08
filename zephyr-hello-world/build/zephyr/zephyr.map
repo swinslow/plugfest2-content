@@ -2408,7 +2408,7 @@ device_handles  0x0000000000004894       0x3e
                 0x00000000000048c8                __devicehdl_DT_N_S_soc_S_clock_40000000
                 0x00000000000048d2                __device_handles_end = .
 
-rodata          0x00000000000048e0      0x1d0
+rodata          0x00000000000048e0      0x1c0
  *(SORT_BY_ALIGNMENT(.rodata))
  *(SORT_BY_ALIGNMENT(.rodata.*))
  .rodata.delay_machine_code.0
@@ -2475,20 +2475,19 @@ rodata          0x00000000000048e0      0x1d0
  .rodata.z_cstart.str1.1
                 0x0000000000004a66        0x5 zephyr/kernel/libkernel.a(init.c.obj)
  .rodata.boot_banner.str1.1
-                0x0000000000004a6b       0x43 zephyr/kernel/libkernel.a(banner.c.obj)
-                                         0x44 (size before relaxing)
+                0x0000000000004a6b       0x35 zephyr/kernel/libkernel.a(banner.c.obj)
+                                         0x36 (size before relaxing)
  *(SORT_BY_ALIGNMENT(.gnu.linkonce.r.*))
-                0x0000000000004ab0                . = ALIGN (0x4)
- *fill*         0x0000000000004aae        0x2 
-                0x0000000000004ab0                _image_rodata_end = .
-                0x0000000000004ac0                . = ALIGN (_region_min_align)
+                0x0000000000004aa0                . = ALIGN (0x4)
+                0x0000000000004aa0                _image_rodata_end = .
+                0x0000000000004aa0                . = ALIGN (_region_min_align)
                 0x0000000000008000                . = ALIGN ((0x1 << LOG2CEIL ((_image_rodata_end - _image_rom_start))))
                 0x0000000000008000                _image_rom_end = .
                 0x0000000020000000                . = 0x20000000
                 0x0000000020000000                . = ALIGN (_region_min_align)
                 0x0000000020000000                _image_ram_start = .
 
-.ramfunc        0x0000000020000000        0x0 load address 0x0000000000004ab0
+.ramfunc        0x0000000020000000        0x0 load address 0x0000000000004aa0
                 0x0000000020000000                . = ALIGN (_region_min_align)
                 0x0000000020000000                . = ALIGN ((0x1 << LOG2CEIL (_ramfunc_ram_size)))
                 0x0000000020000000                _ramfunc_ram_start = .
@@ -2498,9 +2497,9 @@ rodata          0x00000000000048e0      0x1d0
                 0x0000000020000000                . = ALIGN ((0x1 << LOG2CEIL (_ramfunc_ram_size)))
                 0x0000000020000000                _ramfunc_ram_end = .
                 0x0000000000000000                _ramfunc_ram_size = (_ramfunc_ram_end - _ramfunc_ram_start)
-                0x0000000000004ab0                _ramfunc_rom_start = LOADADDR (.ramfunc)
+                0x0000000000004aa0                _ramfunc_rom_start = LOADADDR (.ramfunc)
 
-datas           0x0000000020000000       0x64 load address 0x0000000000004ab0
+datas           0x0000000020000000       0x64 load address 0x0000000000004aa0
                 0x0000000020000000                __data_ram_start = .
  *(SORT_BY_ALIGNMENT(.data))
  *(SORT_BY_ALIGNMENT(.data.*))
@@ -2523,9 +2522,9 @@ datas           0x0000000020000000       0x64 load address 0x0000000000004ab0
  .data.timeout_list
                 0x000000002000005c        0x8 zephyr/kernel/libkernel.a(timeout.c.obj)
  *(SORT_BY_ALIGNMENT(.kernel.*))
-                0x0000000000004ab0                __data_rom_start = LOADADDR (datas)
+                0x0000000000004aa0                __data_rom_start = LOADADDR (datas)
 
-devices         0x0000000020000064       0xa8 load address 0x0000000000004b14
+devices         0x0000000020000064       0xa8 load address 0x0000000000004b04
                 0x0000000020000064                __device_start = .
                 0x0000000020000064                __device_PRE_KERNEL_1_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.z_device_PRE_KERNEL_1[0-9]_*)))
@@ -2562,7 +2561,7 @@ devices         0x0000000020000064       0xa8 load address 0x0000000000004b14
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.z_device_SMP[1-9][0-9]_*)))
                 0x000000002000010c                __device_end = .
 
-initshell       0x000000002000010c        0x0 load address 0x0000000000004bbc
+initshell       0x000000002000010c        0x0 load address 0x0000000000004bac
                 0x000000002000010c                __shell_module_start = .
  *(SORT_BY_ALIGNMENT(.shell_module_*))
                 0x000000002000010c                __shell_module_end = .
@@ -2571,81 +2570,81 @@ initshell       0x000000002000010c        0x0 load address 0x0000000000004bbc
                 0x000000002000010c                __shell_cmd_end = .
 
 log_dynamic_sections
-                0x000000002000010c        0x0 load address 0x0000000000004bbc
+                0x000000002000010c        0x0 load address 0x0000000000004bac
                 0x000000002000010c                __log_dynamic_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.log_dynamic_*)))
                 0x000000002000010c                __log_dynamic_end = .
 
 _static_thread_data_area
-                0x000000002000010c        0x0 load address 0x0000000000004bbc
+                0x000000002000010c        0x0 load address 0x0000000000004bac
                 0x000000002000010c                __static_thread_data_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.__static_thread_data.static.*)))
                 0x000000002000010c                __static_thread_data_list_end = .
 
-k_timer_area    0x000000002000010c        0x0 load address 0x0000000000004bbc
+k_timer_area    0x000000002000010c        0x0 load address 0x0000000000004bac
                 0x000000002000010c                _k_timer_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._k_timer.static.*)))
                 0x000000002000010c                _k_timer_list_end = .
 
 k_mem_slab_area
-                0x000000002000010c        0x0 load address 0x0000000000004bbc
+                0x000000002000010c        0x0 load address 0x0000000000004bac
                 0x000000002000010c                _k_mem_slab_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._k_mem_slab.static.*)))
                 0x000000002000010c                _k_mem_slab_list_end = .
 
 k_mem_pool_area
-                0x000000002000010c        0x0 load address 0x0000000000004bbc
+                0x000000002000010c        0x0 load address 0x0000000000004bac
                 0x000000002000010c                _k_mem_pool_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._k_mem_pool.static.*)))
                 0x000000002000010c                _k_mem_pool_list_end = .
 
-k_heap_area     0x000000002000010c        0x0 load address 0x0000000000004bbc
+k_heap_area     0x000000002000010c        0x0 load address 0x0000000000004bac
                 0x000000002000010c                _k_heap_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._k_heap.static.*)))
                 0x000000002000010c                _k_heap_list_end = .
 
-k_mutex_area    0x000000002000010c        0x0 load address 0x0000000000004bbc
+k_mutex_area    0x000000002000010c        0x0 load address 0x0000000000004bac
                 0x000000002000010c                _k_mutex_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._k_mutex.static.*)))
                 0x000000002000010c                _k_mutex_list_end = .
 
-k_stack_area    0x000000002000010c        0x0 load address 0x0000000000004bbc
+k_stack_area    0x000000002000010c        0x0 load address 0x0000000000004bac
                 0x000000002000010c                _k_stack_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._k_stack.static.*)))
                 0x000000002000010c                _k_stack_list_end = .
 
-k_msgq_area     0x000000002000010c        0x0 load address 0x0000000000004bbc
+k_msgq_area     0x000000002000010c        0x0 load address 0x0000000000004bac
                 0x000000002000010c                _k_msgq_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._k_msgq.static.*)))
                 0x000000002000010c                _k_msgq_list_end = .
 
-k_mbox_area     0x000000002000010c        0x0 load address 0x0000000000004bbc
+k_mbox_area     0x000000002000010c        0x0 load address 0x0000000000004bac
                 0x000000002000010c                _k_mbox_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._k_mbox.static.*)))
                 0x000000002000010c                _k_mbox_list_end = .
 
-k_pipe_area     0x000000002000010c        0x0 load address 0x0000000000004bbc
+k_pipe_area     0x000000002000010c        0x0 load address 0x0000000000004bac
                 0x000000002000010c                _k_pipe_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._k_pipe.static.*)))
                 0x000000002000010c                _k_pipe_list_end = .
 
-k_sem_area      0x000000002000010c        0x0 load address 0x0000000000004bbc
+k_sem_area      0x000000002000010c        0x0 load address 0x0000000000004bac
                 0x000000002000010c                _k_sem_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._k_sem.static.*)))
                 0x000000002000010c                _k_sem_list_end = .
 
-k_queue_area    0x000000002000010c        0x0 load address 0x0000000000004bbc
+k_queue_area    0x000000002000010c        0x0 load address 0x0000000000004bac
                 0x000000002000010c                _k_queue_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._k_queue.static.*)))
                 0x000000002000010c                _k_queue_list_end = .
 
-k_condvar_area  0x000000002000010c        0x0 load address 0x0000000000004bbc
+k_condvar_area  0x000000002000010c        0x0 load address 0x0000000000004bac
                 0x000000002000010c                _k_condvar_list_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._k_condvar.static.*)))
                 0x000000002000010c                _k_condvar_list_end = .
 
 _net_buf_pool_area
-                0x000000002000010c        0x0 load address 0x0000000000004bbc
+                0x000000002000010c        0x0 load address 0x0000000000004bac
                 0x000000002000010c                _net_buf_pool_list = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(._net_buf_pool.static.*)))
                 0x000000002000010c                __data_ram_end = .
@@ -3720,8 +3719,8 @@ noinit          0x00000000200003e8      0xd40
                 0x0000000000001468       0x1e /home/steve/zephyr-sdk-0.12.3/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/10.2.0/thumb/v7e-m/nofp/libgcc.a(_arm_fixunsdfsi.o)
  *(SORT_BY_ALIGNMENT(.gnu.attributes))
 
-.last_section   0x0000000000004bbc        0x0
-                0x0000000000004bbc                _flash_used = (LOADADDR (.last_section) - _image_rom_start)
+.last_section   0x0000000000004bac        0x0
+                0x0000000000004bac                _flash_used = (LOADADDR (.last_section) - _image_rom_start)
 LOAD app/libapp.a
 LOAD zephyr/libzephyr.a
 LOAD zephyr/arch/common/libarch__common.a

@@ -1,4 +1,4 @@
-Built from Zephyr source tree 2021-05-30 with commit 3d39f72a88
+Built from Zephyr source tree 2021-06-07 with tag v2.6.0
 
 ```
 # no effect on actual build; just initializes the CMake file-based APIs
