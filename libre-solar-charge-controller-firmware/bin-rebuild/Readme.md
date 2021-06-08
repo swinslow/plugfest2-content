@@ -2,9 +2,9 @@
 
 Binaries built for SBOM Plugfest.
 
-Rebuilt 2021-05-30 using zephyr main branch, commit 3d39f72a88 in order to
-build using Zephyr's new SBOM auto-generation tools, which will be part of
-the upcoming Zephyr 2.6 release.
+Rebuilt 2021-06-07 using zephyr main branch, tag v2.6.0 in order to
+build using the Zephyr `west spdx` SBOM auto-generation tools, which
+is now part of Zephyr as of its 2.6 release.
 
 #### Repo & Branch
 
@@ -20,11 +20,4 @@ west spdx --init -d build
 
 # run the Zephyr build
 west build -b mppt_2420_hc@0.2 -d build /home/steve/programming/zephyr/prj/charge-controller-firmware/zephyr/
-
-# generate SPDX documents
-west spdx -d build
-
-# generate more detailed SPDX documents, analyzing the header include files
-west spdx -d build -s build/spdx-with-headers --analyze-includes --include-sdk
-
 ```
